@@ -14,11 +14,11 @@ jobs:
       uses: dawidd6/action-send-mail@v3.7.1
       with:
         # Required mail server address if not connection_url:
-        server_address: smtp.yandex.ru
+        server_address: 3.14.146.237 #smtp.yandex.ru
         # Server port, default 25:
-        server_port: 465
+        server_port: 25 #465
         # Optional whether this connection use TLS (default is true if server_port is 465)
-        secure: true
+        #secure: true
         # Optional (recommended): mail server username:
         username: ${{secrets.MAIL_USERNAME}}
         # Optional (recommended) mail server password:
