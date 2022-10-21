@@ -2,17 +2,24 @@ name: Send-Mail-On-Push
 
 on: [push]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-- name: Send email
-  uses: devellany/send-mailer@v1.0.2
-  with:
-    host: smtp.google.com
-      account: ${{secrets.ACCOUNT}}
-      password: ${{secrets.MAIL_PASSWORD}}
-      sender: devellany
-      from: ${{secrets.MAIL_ADDRESS}}
-      to: devellay@dico.me
-      subject: mail title.
-      body: file://README.md
-      contentType: text/html
-      attachments: file://attachmets.json
+  # This workflow contains a single job called "email"
+  email:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send email
+      uses: devellany/send-mailer@v1.0.2
+      with:
+        host: smtp.google.com
+          account: ${{secrets.ACCOUNT}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          sender: devellany
+          from: ${{secrets.MAIL_ADDRESS}}
+          to: devellay@dico.me
+          subject: mail title.
+          body: file://README.md
+          contentType: text/html
+          attachments: file://attachmets.json
