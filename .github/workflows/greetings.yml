@@ -11,14 +11,6 @@ jobs:
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
-          # Specify connection via URL (replaces server_address, server_port, secure,
-          # username and password)
-          #
-          # Format:
-          #
-          #  * smtp://user:password@server:port
-          #  * smtp+starttls://user:password@server:port
-          connection_url: ${{secrets.MAIL_CONNECTION}}
           # Required mail server address if not connection_url:
           server_address: smtp.gmail.com
           # Server port, default 25:
@@ -30,9 +22,9 @@ jobs:
           # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
-          subject: Github puch notice
+          subject: Github push notice
           # Required recipients' addresses:
-          to: e.ermilov@gmail.com
+          to: ${{secrets.TO_EMAIL}}
           # Required sender full name (address can be skipped):
           from: Github Actions # <user@example.com>
           # Optional plain body:
