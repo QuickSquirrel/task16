@@ -32,7 +32,7 @@ jobs:
           # Required mail subject:
           subject: Github puch notice
           # Required recipients' addresses:
-          to: e.ermilov@gmil.com
+          to: e.ermilov@gmial.com
           # Required sender full name (address can be skipped):
           from: Github Actions # <user@example.com>
           # Optional plain body:
